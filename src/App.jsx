@@ -46,7 +46,15 @@ export default function App() {
   ]);
   console.log(weatherData[id]);
   return (
-    <div className="app-container güneşli-background">
+    <div
+      className={`app-container  ${
+        weatherData[id].condition === "Güneşli"
+          ? "güneşli-background"
+          : weatherData[id].condition === "Yağmurlu"
+          ? "yağmurlu-background"
+          : "karlı-background"
+      }`}
+    >
       <div className="weather-container">
         <div className="icon">
           {weatherData[id].condition === "Güneşli"
